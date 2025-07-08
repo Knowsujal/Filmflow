@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Website</title>
+    <meta name="description" content="Discover latest movies, book tickets, and explore upcoming releases on FilmFlow.">
+    <meta name="keywords" content="movies, latest movies, Marvel, Bollywood, Hollywood, book movie tickets">
+    <meta property="og:title" content="FilmFlow - Latest Movies and Trailers">
+    <meta property="og:description" content="Book now, watch trailers, and explore upcoming movies.">
+    <meta property="og:type" content="website">
+    <title>FilmFlow - Movie Website</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navbar  -->
     <header>
-        <a href="#home" class="logo">
+        <a href="#home" class="logo" aria-label="FilmFlow Home">
             <i class='bx bxs-movie'></i>FilmFlow
         </a>
         <div class="bx bx-menu" id="menu-icon"></div>
@@ -26,20 +33,23 @@
             <li><a href="#coming">Coming</a></li>
             <li><a href="#newsletter">Newsletter</a></li>
         </ul>
+
         <a href="#" class="btn">Sign In</a>
     </header>
 
     <!-- Home  -->
-    <section class="home swiper" id="home">
+    <section class="home swiper" id="home" data-aos="fade-up">
         <div class="swiper-wrapper">
             <div class="swiper-slide container">
-                <img src="./img/home1.jpg" alt="">
+                <img src="./img/home1.jpg" alt="Guardians of the Galaxy Vol 2" loading="lazy">
                 <div class="home-text">
                     <span>Marvel Universe</span>
                     <h1>Guardians of the Galaxy <br>Volume 2</h1>
-                    <a href="" class="btn">Book Now</a>
-                    <a href="" class="play">
-                        <i class='bx bx-play' ></i>
+                    <a href="https://www.youtube.com/watch?v=dW1BIid8Osg" target="_blank" class="btn"
+                        aria-label="Book Guardians ticket">Book Now</a>
+                    <a href="https://www.youtube.com/watch?v=dW1BIid8Osg" target="_blank" class="play"
+                        aria-label="Play trailer">
+                        <i class='bx bx-play'></i>
                     </a>
                 </div>
             </div>
@@ -50,7 +60,7 @@
                     <h1>Thor: <br>Love and Thunder</h1>
                     <a href="" class="btn">Book Now</a>
                     <a href="" class="play">
-                        <i class='bx bx-play' ></i>
+                        <i class='bx bx-play'></i>
                     </a>
                 </div>
             </div>
@@ -61,7 +71,7 @@
                     <h1>Spider-Man <br>No Way Home</h1>
                     <a href="" class="btn">Book Now</a>
                     <a href="" class="play">
-                        <i class='bx bx-play' ></i>
+                        <i class='bx bx-play'></i>
                     </a>
                 </div>
             </div>
@@ -72,17 +82,17 @@
                     <h1>Avengers: <br>End Game</h1>
                     <a href="" class="btn">Book Now</a>
                     <a href="" class="play">
-                        <i class='bx bx-play' ></i>
+                        <i class='bx bx-play'></i>
                     </a>
                 </div>
             </div>
-            
-          </div>
-          <div class="swiper-pagination"></div>
+
+        </div>
+        <div class="swiper-pagination"></div>
     </section>
 
     <!-- Movies  -->
-    <div class="movies" id="movies">
+    <section class="movies" id="movies" data-aos="fade-up">
         <h2 class="heading">Opening This Week</h2>
         <!-- Movies container  -->
         <div class="movies-container">
@@ -167,10 +177,10 @@
                 <span>120 min | Action</span>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- coming  -->
-    <section class="coming" id="coming">
+    <section class="coming" id="coming" data-aos="fade-up">
         <h2 class="heading">Coming Soon</h2>
         <!-- coming contanier  -->
         <div class="coming-container swiper">
@@ -250,17 +260,18 @@
     </section>
 
     <!-- Newsletter /\ -->
-    <section class="newsletter" id="newsletter">
+    <section class="newsletter" id="newsletter" data-aos="fade-up">
         <h2>Subscribe To Get <br>Newsletter</h2>
-        <form action="">
-            <input type="email" class="email" placeholder="Enter Email" required>
+        <form action="https://formspree.io/f/mwkgbggr" method="POST" onsubmit="handleSubmit(event)">
+            <input type="email" name="email" class="email" placeholder="Enter Email" required>
             <input type="submit" value="Subscribe" class="btn">
+            <div class="success-message" style="display:none;">Thank you for subscribing!</div>
         </form>
     </section>
 
     <!-- footer  -->
     <section class="footer">
-        <a href="" class="logo">
+        <a href="#home" class="logo">
             <i class="bx bxs-movie"></i>FilmFLow
         </a>
         <div class="social">
@@ -272,12 +283,29 @@
 
     <!-- Copyright  -->
     <div class="copyright">
-        <p>&#169; FilmFLow All Right Reserved</p>
+        <p>&#169; 2025 FilmFLow. All Right Reserved</p>
     </div>
 
 
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
+
 </html>
